@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnimatedStickyHeaderView: View {
+    @Environment(\.dismiss) var dismiss
     // Max Height
     let maxHeight = UIScreen.main.bounds.height / 2.3
     var topEdge: CGFloat
@@ -27,7 +28,7 @@ struct AnimatedStickyHeaderView: View {
                             // Top nav view
                             HStack(spacing: 15) {
                                 Button {
-                                    
+                                    dismiss()
                                 } label: {
                                     Image(systemName: "xmark")
                                         .font(.body.bold())
