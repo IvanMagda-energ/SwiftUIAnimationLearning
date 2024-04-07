@@ -12,18 +12,23 @@ struct TopBarView: View {
     var topEdge: CGFloat
     var maxHeight: CGFloat
     
+    private let spacing: CGFloat = 15
+    private let imageSize: CGFloat = 80
+    private let cornerRadius: CGFloat = 10
+    private let textOpacity: CGFloat = 0.8
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            Image("User")
+        VStack(alignment: .leading, spacing: spacing) {
+            Image("EricCarman")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
-                .cornerRadius(10)
-            Text("Jon Dow")
+                .frame(width: imageSize, height: imageSize)
+                .cornerRadius(cornerRadius)
+            Text("Eric Carman")
                 .font(.largeTitle.bold())
             Text("In this Video I'm going to show how to create a Stylish Collapsable Animated Header Using SwiftUI")
                 .fontWeight(.semibold)
-                .foregroundStyle(Color.white.opacity(0.8))
+                .foregroundStyle(Color.white.opacity(textOpacity))
         }
         .padding()
         .padding(.bottom)

@@ -10,12 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            ScrollView {
+                NavigationLink(destination: AnimatedStickyHeaderView(topEdge: 0)) {
+                    RowView(title: "Animated sticky header")
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
