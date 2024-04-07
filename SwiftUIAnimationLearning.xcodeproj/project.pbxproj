@@ -16,11 +16,11 @@
 		CEE7A4A12BC2C545003686BF /* MessageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4A02BC2C545003686BF /* MessageCardView.swift */; };
 		CEE7A4A32BC2C578003686BF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4A22BC2C578003686BF /* Message.swift */; };
 		CEE7A4A82BC2C5F0003686BF /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4A72BC2C5F0003686BF /* MockMessage.swift */; };
-		CEE7A4AA2BC2C84B003686BF /* AnimationStickyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4A92BC2C84B003686BF /* AnimationStickyHeaderViewModel.swift */; };
 		CEE7A4AD2BC2CC32003686BF /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4AC2BC2CC32003686BF /* OffsetModifier.swift */; };
 		CEE7A4B02BC2CD4E003686BF /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4AF2BC2CD4E003686BF /* CustomCorner.swift */; };
 		CEE7A4B32BC2DAC5003686BF /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4B22BC2DAC5003686BF /* RowView.swift */; };
 		CEE7A4B62BC2DFEC003686BF /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4B52BC2DFEC003686BF /* Color+Extensions.swift */; };
+		CEE7A4BA2BC2FA22003686BF /* AnimatedStickyHeaderMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7A4B92BC2FA22003686BF /* AnimatedStickyHeaderMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,11 +34,11 @@
 		CEE7A4A02BC2C545003686BF /* MessageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCardView.swift; sourceTree = "<group>"; };
 		CEE7A4A22BC2C578003686BF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		CEE7A4A72BC2C5F0003686BF /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
-		CEE7A4A92BC2C84B003686BF /* AnimationStickyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStickyHeaderViewModel.swift; sourceTree = "<group>"; };
 		CEE7A4AC2BC2CC32003686BF /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
 		CEE7A4AF2BC2CD4E003686BF /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		CEE7A4B22BC2DAC5003686BF /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		CEE7A4B52BC2DFEC003686BF /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		CEE7A4B92BC2FA22003686BF /* AnimatedStickyHeaderMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedStickyHeaderMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		CEE7A4972BC2C389003686BF /* AnimatedStickyHeader */ = {
 			isa = PBXGroup;
 			children = (
-				CEE7A4A92BC2C84B003686BF /* AnimationStickyHeaderViewModel.swift */,
 				CEE7A49C2BC2C4AD003686BF /* AnimatedStickyHeaderView.swift */,
+				CEE7A4B92BC2FA22003686BF /* AnimatedStickyHeaderMainView.swift */,
 				CEE7A49E2BC2C4ED003686BF /* TopBarView.swift */,
 				CEE7A4A02BC2C545003686BF /* MessageCardView.swift */,
 			);
@@ -227,7 +227,7 @@
 				CEE7A4B02BC2CD4E003686BF /* CustomCorner.swift in Sources */,
 				CEE7A48A2BC2C0DE003686BF /* SwiftUIAnimationLearningApp.swift in Sources */,
 				CEE7A49F2BC2C4ED003686BF /* TopBarView.swift in Sources */,
-				CEE7A4AA2BC2C84B003686BF /* AnimationStickyHeaderViewModel.swift in Sources */,
+				CEE7A4BA2BC2FA22003686BF /* AnimatedStickyHeaderMainView.swift in Sources */,
 				CEE7A4A82BC2C5F0003686BF /* MockMessage.swift in Sources */,
 				CEE7A4AD2BC2CC32003686BF /* OffsetModifier.swift in Sources */,
 				CEE7A4A32BC2C578003686BF /* Message.swift in Sources */,

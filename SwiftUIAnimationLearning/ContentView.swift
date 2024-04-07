@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ScrollView {
-                NavigationLink(destination: AnimatedStickyHeaderView(topEdge: 0)) {
+                NavigationLink(destination: AnimatedStickyHeaderMainView()) {
                     RowView(title: "Animated sticky header")
                 }
             }

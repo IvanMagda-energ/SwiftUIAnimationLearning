@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AnimatedStickyHeaderView: View {
-    let viewModel = AnimationStickyHeaderViewModel()
     // Max Height
     let maxHeight = UIScreen.main.bounds.height / 2.3
     var topEdge: CGFloat
@@ -16,35 +15,14 @@ struct AnimatedStickyHeaderView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            
             VStack(spacing: 15) {
-                
-                // TopNavView
                 GeometryReader { proxy in
-                    
                     TopBarView(offset: $offset)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                     // Sticky effect
-                        .frame(
-                            height: viewModel.getHeaderHeight(
-                                maxHeight: maxHeight,
-                                offset: offset,
-                                topEdge: topEdge
-                            ),
-                            alignment: .bottom
-                        )
-                        .background(
-                            .indigo,
-                            in: CustomCorner(
-                                corners: [.bottomRight],
-                                radius: viewModel.getCornerRadius(
-                                    maxHeight: maxHeight,
-                                    offset: offset,
-                                    topEdge: topEdge
-                                )
-                            )
-                        )
+                        .frame(height: getHeaderHeight(), alignment: .bottom)
+                        .background(.indigo,in: CustomCorner(corners: [.bottomRight], radius: getCornerRadius()))
                         .overlay(alignment: .top) {
                             // Top nav view
                             HStack(spacing: 15) {
@@ -60,24 +38,12 @@ struct AnimatedStickyHeaderView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 35, height: 35)
                                     .clipShape(Circle())
-                                    .opacity(
-                                        viewModel.getTopBarTitleOpacity(
-                                            maxHeight: maxHeight,
-                                            offset: offset,
-                                            topEdge: topEdge
-                                        )
-                                    )
+                                    .opacity(getTopBarTitleOpacity())
                                 
                                 Text("Jon Dow")
                                     .fontWeight(.bold)
                                     .foregroundStyle(.white)
-                                    .opacity(
-                                        viewModel.getTopBarTitleOpacity(
-                                            maxHeight: maxHeight,
-                                            offset: offset,
-                                            topEdge: topEdge
-                                        )
-                                    )
+                                    .opacity(getTopBarTitleOpacity())
                                 
                                 Spacer()
                                 
@@ -114,6 +80,26 @@ struct AnimatedStickyHeaderView: View {
         // Settings coordinate Space
         .coordinateSpace(name: "SCROLL")
         .toolbar(.hidden, for: .navigationBar)
+    }
+    
+    func getHeaderHeight() -> CGFloat {
+        // 80 is the constant top Nav bar height
+        // since we included top save area so we also need to include that to
+        let topHeight = maxHeight + offset
+        return topHeight > (80 + topEdge) ? topHeight : (80 + topEdge)
+    }
+    
+    func getCornerRadius() -> CGFloat {
+        let progress = -offset / (maxHeight - (80 + topEdge))
+        let value = 1 - progress
+        let radius = value * 50
+        return offset < 0 ? radius : 50
+    }
+    
+    func getTopBarTitleOpacity() -> CGFloat {
+        // To start after the main content vansihed we need to eliminate 70 from offset
+        let progress = -(offset + 60) / (maxHeight - (80 + topEdge))
+        return progress
     }
 }
 
