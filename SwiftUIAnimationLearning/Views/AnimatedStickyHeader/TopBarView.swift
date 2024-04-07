@@ -40,5 +40,5 @@ struct TopBarView: View {
 }
 
 #Preview {
-    TopBarView(offset: <#Binding<CGFloat>#>, topEdge: <#CGFloat#>, maxHeight: <#CGFloat#>)
+    TopBarView(offset: .constant(0), topEdge: 0, maxHeight: 0)
 }

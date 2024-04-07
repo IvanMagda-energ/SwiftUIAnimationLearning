@@ -30,5 +30,5 @@ struct MessageCardView: View {
 }
 
 #Preview {
-    MessageCardView()
+    MessageCardView(message: MockMessage.preparedMessage)
 }

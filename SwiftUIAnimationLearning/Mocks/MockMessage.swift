@@ -1,5 +1,5 @@
 //
-//  Messages.swift
+//  MockMessage.swift
 //  SwiftUIAnimationLearning
 //
 //  Created by Ivan Magda on 07.04.2024.
@@ -31,6 +31,8 @@ enum MockMessage {
         Message(message: "Testing 123", userName: "Ava", tintColor: .accentColor),
         Message(message: "Final message", userName: "Elijah", tintColor: .brown)
     ]
+    
+    static let preparedMessage = Message(message: "Another Message", userName: "Alice", tintColor: .black)
 }
 
 

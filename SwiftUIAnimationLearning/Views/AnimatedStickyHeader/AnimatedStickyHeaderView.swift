@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnimatedStickyHeaderView: View {
+    let viewModel = AnimationStickyHeaderViewModel()
     // Max Height
     let maxHeight = UIScreen.main.bounds.height / 2.3
     var topEdge: CGFloat
@@ -25,8 +26,25 @@ struct AnimatedStickyHeaderView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                     // Sticky effect
-                        .frame(height: getHeaderHeight(), alignment: .bottom)
-                        .background(.indigo, in: CustomCorner(corners: [.bottomRight], radius: getCornerRadius()))
+                        .frame(
+                            height: viewModel.getHeaderHeight(
+                                maxHeight: maxHeight,
+                                offset: offset,
+                                topEdge: topEdge
+                            ),
+                            alignment: .bottom
+                        )
+                        .background(
+                            .indigo,
+                            in: CustomCorner(
+                                corners: [.bottomRight],
+                                radius: viewModel.getCornerRadius(
+                                    maxHeight: maxHeight,
+                                    offset: offset,
+                                    topEdge: topEdge
+                                )
+                            )
+                        )
                         .overlay(alignment: .top) {
                             // Top nav view
                             HStack(spacing: 15) {
@@ -42,12 +60,24 @@ struct AnimatedStickyHeaderView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 35, height: 35)
                                     .clipShape(Circle())
-                                    .opacity(getTopBarTitleOpacity())
+                                    .opacity(
+                                        viewModel.getTopBarTitleOpacity(
+                                            maxHeight: maxHeight,
+                                            offset: offset,
+                                            topEdge: topEdge
+                                        )
+                                    )
                                 
                                 Text("Jon Dow")
                                     .fontWeight(.bold)
                                     .foregroundStyle(.white)
-                                    .opacity(getTopBarTitleOpacity())
+                                    .opacity(
+                                        viewModel.getTopBarTitleOpacity(
+                                            maxHeight: maxHeight,
+                                            offset: offset,
+                                            topEdge: topEdge
+                                        )
+                                    )
                                 
                                 Spacer()
                                 
@@ -72,7 +102,7 @@ struct AnimatedStickyHeaderView: View {
                 
                 // Sample messages
                 VStack(spacing: 15) {
-                    ForEach(allMessages) { message in
+                    ForEach(MockMessage.preparedMessages) { message in
                         MessageCardView(message: message)
                     }
                 }
@@ -87,5 +117,5 @@ struct AnimatedStickyHeaderView: View {
 }
 
 #Preview {
-    AnimatedStickyHeaderView()
+    AnimatedStickyHeaderView(topEdge: 10)
 }
