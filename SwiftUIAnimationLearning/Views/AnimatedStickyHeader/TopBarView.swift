@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TopBarView: View {
     @Binding var offset: CGFloat
-    var topEdge: CGFloat
-    var maxHeight: CGFloat
     
     private let spacing: CGFloat = 15
     private let imageSize: CGFloat = 80
@@ -45,5 +43,5 @@ struct TopBarView: View {
 }
 
 #Preview {
-    TopBarView(offset: .constant(0), topEdge: 0, maxHeight: 0)
+    TopBarView(offset: .constant(0))
 }

@@ -22,7 +22,7 @@ struct AnimatedStickyHeaderView: View {
                 // TopNavView
                 GeometryReader { proxy in
                     
-                    TopBarView(offset: $offset, topEdge: topEdge, maxHeight: maxHeight)
+                    TopBarView(offset: $offset)
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                     // Sticky effect
@@ -55,7 +55,7 @@ struct AnimatedStickyHeaderView: View {
                                         .font(.body.bold())
                                 }
                                 
-                                Image("User")
+                                Image("EricCarman")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 35, height: 35)
@@ -113,6 +113,7 @@ struct AnimatedStickyHeaderView: View {
         }
         // Settings coordinate Space
         .coordinateSpace(name: "SCROLL")
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
