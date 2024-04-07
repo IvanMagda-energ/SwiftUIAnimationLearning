@@ -1,5 +1,5 @@
 //
-//  TopBarView.swift
+//  TopUserView.swift
 //  SwiftUIAnimationLearning
 //
 //  Created by Ivan Magda on 07.04.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopBarView: View {
+struct TopUserView: View {
     @Binding var offset: CGFloat
     
     private let spacing: CGFloat = 15
@@ -43,5 +43,5 @@ struct TopBarView: View {
 }
 
 #Preview {
-    TopBarView(offset: .constant(0))
+    TopUserView(offset: .constant(0))
 }
