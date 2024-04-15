@@ -14,6 +14,9 @@ struct ContentView: View {
                 NavigationLink(destination: AnimatedStickyHeaderMainView()) {
                     RowView(title: "Animated sticky header")
                 }
+                NavigationLink(destination: NetflixAnimationMainView()) {
+                    RowView(title: "Netflix animation")
+                }
             }
             .padding()
         }
