@@ -11,9 +11,10 @@ struct NetflixAnimationHomeView: View {
     var body: some View {
         VStack {
             Spacer()
+            // Custom tab bar
             NetflixAnimationTabbarView()
         }
-       
+        .coordinateSpace(.named("NETFLIXANIMATIONHOMEVIEW"))
     }
 }
 

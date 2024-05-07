@@ -13,9 +13,19 @@ struct NetflixAnimationMainView: View {
         ZStack {
             // First view after Splash Screen
             NetflixAnimationHomeView()
-                .onAppear {
-                    // Is needed in order for the view to start from animation every time                    viewModel.isSplashFinished = false
+            
+            if viewModel.hideMainView {
+                Rectangle()
+                    .fill(.black)
+                    .ignoresSafeArea()
+            }
+            
+            ZStack {
+                if viewModel.showProfileView {
+                    NetflixAnimationProfileView()
                 }
+            }
+            .animation(.snappy, value: viewModel.showProfileView)
             
             if !viewModel.isSplashFinished {
                 SplashScreen()

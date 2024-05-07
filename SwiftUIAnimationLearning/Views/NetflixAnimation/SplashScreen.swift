@@ -30,6 +30,8 @@ struct SplashScreen: View {
                     .playing(.fromProgress(0, toProgress: progress, loopMode: .playOnce))
                     .animationDidFinish { completed in
                         viewModel.isSplashFinished = progress != 0 && completed
+                        viewModel.showProfileView = viewModel.isSplashFinished
+                        viewModel.hideMainView = viewModel.showProfileView
                     }
                     .frame(width: lottieViewWidth, height: lottieViewHeight)
                     .task {
